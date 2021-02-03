@@ -3,7 +3,6 @@ import {
   requestStart,
   requestSuccess,
   requestFailure,
-  updateList
 } from '../redux/actions'
 import ListServices from '../services/list'
 import { CREATE, UPDATE, DELETE, UPDATETASK } from '../redux/constants'
@@ -44,7 +43,7 @@ function* listWorker(action) {
       }
     }
 
-    const { data, status } = responseData
+    const { data } = responseData
     yield put(requestSuccess({
       method,
       data,
