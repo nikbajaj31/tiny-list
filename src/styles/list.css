@@ -1,0 +1,12 @@
+
+.main-grid {
+    display: inline-grid !important;
+}
+
+.create-textfield {
+    margin: 40px 0 20px !important;
+}
+
+.list-item {
+    border-bottom: 0 !important;
+}
