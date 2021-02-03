@@ -12,15 +12,15 @@ const List = () => {
 
   useEffect(() => {
     dispatch(requestStart());
-  }, []);
+  }, [dispatch]);
 
   return (
     <Container maxWidth="sm">
-      <Grid container spacing={3} classes={{ container: "main-grid" }} lg>
-        <Grid item lg>
+      <Grid container spacing={3} classes={{ container: "main-grid" }}>
+        <Grid item>
           <CreateTask handleSubmit={() => {}} />
         </Grid>
-        <Grid item md>
+        <Grid item>
           <Table size="medium">
             <TableBody>
               {Boolean(taskList.length) &&

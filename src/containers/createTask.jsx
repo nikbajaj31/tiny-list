@@ -5,13 +5,13 @@ import { requestStart } from "../redux-saga/redux/list";
 import { CREATE } from "../redux-saga/redux/constants";
 
 const CreateTask = () => {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
   const dispatch = useDispatch();
 
-  const handleChange = useCallback((ev) => setText(ev.target.value))
+  const handleChange = useCallback((ev) => setText(ev.target.value), [setText])
 
   const handleSubmit = (ev) => {
-    if (ev.keyCode == 13) {
+    if (ev.keyCode === 13) {
       dispatch(
         requestStart({
           method: CREATE,

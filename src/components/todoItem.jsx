@@ -6,7 +6,7 @@ import {
   TextField,
 } from "@material-ui/core";
 import React, { useCallback, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Delete } from "@material-ui/icons";
 import {
   UPDATE,
@@ -37,7 +37,7 @@ const List = ({ item }) => {
       );
       return !state;
     });
-  }, [item.id]);
+  }, [item.id, dispatch]);
 
   const handleDeleteTask = useCallback(() => {
     dispatch(
@@ -46,7 +46,7 @@ const List = ({ item }) => {
         taskId: item.id,
       })
     );
-  }, [item.id]);
+  }, [item.id, dispatch]);
 
   const handleEditTaskText = useCallback((ev) => {
     setTaskText(() => ev.target.value);
@@ -57,7 +57,7 @@ const List = ({ item }) => {
   }, []);
 
   const handleSubmit = (ev) => {
-    if (ev.keyCode == 13) {
+    if (ev.keyCode === 13) {
       handleUpdateTask();
     }
   };
